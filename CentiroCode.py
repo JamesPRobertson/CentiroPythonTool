@@ -1,5 +1,5 @@
 inFile = open("inFile.txt","r+")
-outFile  = open("outPutFile.txt", "w+")
+outFile  = open("outputFile.txt", "w+")
 
 customerList = []
 
@@ -15,4 +15,4 @@ for line in inFile:
 printList = sorted(customerList, key = lambda i: i['lastName']) 
 
 for entry in printList:
-    outFile.write("{f[orderNo]} {f[fullName]:25} {f[status]}".format(f = entry) + "\n")
+    outFile.write("[ ] {f[orderNo]} {f[fullName]:28.26} {f[status]:.26}".format(f = entry) + "\n")
