@@ -1,6 +1,6 @@
 inFile = open("inFile.txt","r+")
 outFile  = open("outPutFile.txt", "w+")
- 
+
 customerList = []
 
 for line in inFile:
@@ -12,7 +12,7 @@ for line in inFile:
 
     customerList.append(foo)
 
-printList = sorted(customerList, key = lambda i: i['lastName'])   
+printList = sorted(customerList, key = lambda i: i['lastName']) 
 
-for foo in printList:
-    print("{f[orderNo]} {f[fullName]:25} {f[status]}".format(f = foo))
+for entry in printList:
+    outFile.write("{f[orderNo]} {f[fullName]:25} {f[status]}".format(f = entry) + "\n")
